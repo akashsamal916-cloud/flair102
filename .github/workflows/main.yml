@@ -1,6 +1,6 @@
 name: main work_flow
 on: 
-     push:
+  push:
     branches:
         -main
 jobs:

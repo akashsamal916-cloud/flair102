@@ -1,1 +1,53 @@
-
+name: 
+ on: 
+     push:
+    branches:
+        -main
+jobs:
+    job1:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Set up Python
+              run: echo "job1"
+    job2:
+        runs-on: ubuntu-latest
+        needs: job1
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Set up Python
+              run: echo "job2"       
+     job3:
+        runs-on: ubuntu-latest
+        needs: job1
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Set up Python
+              run: echo "job3" 
+     job4:
+        runs-on: ubuntu-latest
+        needs: [job2, job3]
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Set up Python
+              run: echo "job4"    
+     job5:
+        runs-on: ubuntu-latest
+        needs: [job2, job3]
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Set up Python
+              run: echo "job5"    
+    job6:
+        runs-on: ubuntu-latest
+        needs: [job4, job5]
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v2
+            - name: Set up Python
+              run: echo "job6"              

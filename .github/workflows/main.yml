@@ -3,7 +3,7 @@ on:
   push:
     branches:
         -main
-jobs:
+ jobs:
     job1:
         runs-on: ubuntu-latest
         steps:
